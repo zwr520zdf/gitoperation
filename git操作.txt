@@ -1,0 +1,69 @@
+git clone 		//克隆
+ls			//看目录下文件
+git checkout -b 自己分支 //创建自己分支
+git checkout master     //切换主分支
+git checkout 自己分支   //切自己分支
+git add .  		//改动文件放到暂存区
+git add 路径		//只添加某个文件到暂存区
+gti status 		//查看状态
+git commit -m ‘xxx’	//提交然后添加注释
+git log 		//看记录
+按q 			//结束预览
+git push origin 自己分支 //推向自己分支
+
+
+先切换到主分支
+git merge 自己分支      //将其他分支合并到主分支
+git push origin master //合并的推向远端
+
+git push origin head:起个分支名 //比如本地直接在dev
+ 
+
+删除正在打开的分支
+git branch -D <branch_name>
+
+删除终止的分支
+git branch -d <branch_name>
+
+git checkout . 将本地没有提交的全部还原
+
+git diff 路径    //查看某个文件修改部门
+
+没有add修改的文件撤销：
+git checkout 路径   //让某个文件还原
+
+add后撤销:
+git reset 路径            //去掉某个文件不到暂存区
+git reset HEAD 恢复所有add到暂存区的文件
+
+
+在git push的时候，有时候我们会想办法撤销git commit的内容 
+
+1、找到之前提交的git commit的id 
+
+	git log 
+
+  找到想要撤销的id 
+
+2、git reset –hard id 
+
+  完成撤销,同时将代码恢复到前一commit_id 对应的版本 
+
+3、git reset id 
+
+  完成Commit命令的撤销，但是不对代码修改进行撤销，可以直接通过git commit 重新提交对本地代码的修改
+
+
+
+git pull origin 远程分支 将远程分支拉取到本地
+git stash  将当前工作区的修改暂存起来
+git stash pop 将暂存的释放
+git fetch 抓取所有分支 如果返回则说明有远程有分支可以合并
+git merge origin/远程分支 远程分支合并到本地
+
+git checkout . #本地所有修改的。没有的提交的，都返回到原来的状态
+
+
+
+冲突
+其中Updated upstream 和=====之间的内容就是pull下来的内容，====和stashed changes之间的内容就是本地修改的内容。
